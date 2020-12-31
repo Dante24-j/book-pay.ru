@@ -20,7 +20,7 @@
 		width: 100%;									//!НЕ ТРОГАТЬ
 		height: 100%;									//!НЕ ТРОГАТЬ
 		z-index: 2;										//!НЕ ТРОГАТЬ
-		background-color: #fff;			//*цвет подложки
+		background-color: #000;			//*цвет подложки
 	}
 	// .header__menu
 
@@ -43,10 +43,17 @@
 	}
 
 	&__logo {
-		margin: 0px 116px 0px 0px;		//*отступ влево от лого
+		@include flexbox();
 		z-index: 2;									//!НЕ ТРОГАТЬ
 		img{
-			width: 150px;
+			display: block;
+			width: 79px;
+			height: 79px;
+			margin: 0 9px 0 0;
+		}
+		div{
+			width: 211px;
+			@include Text-Style;
 		}
 	}
 
@@ -85,10 +92,10 @@
 	// .menu__list	(Основное меню)
 	&__list {
 		@include flexbox(); 							//!НЕ ТРОГАТЬ
-		flex: 0 1 770px;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
+		flex: 0 1 auto;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
 		justify-content: space-between;		//*Выравнивание дочерних элементов
 		align-items: center;							//*Выравнивание по вертикали
-		margin: 0px 117px 0px 0px;
+		margin: 0px 0px 0px 0px;
 
 		//!НЕ ТРОГАТЬ(АДАПТИВ)
 		@media (max-width:$md2+px){
@@ -100,15 +107,24 @@
 	// .menu__link
 
 	&__link {
+		@include Text-Style-2;
 
+		&.active, &.y{
+			//градиент для текста (текст должен быть в блочном элементе)
+			color: #ffe600;	//для старых браузеров
+			background: linear-gradient(to top, #ffe600, #ffd600);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	}
 
 	// .menu__contact (дополнительное меню)
 	&__contact {
 		@include flexbox();								//!НЕ ТРОГАТЬ
-		flex: 1 0 auto;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
-		justify-content: flex-start;		//*Выравнивание дочерних элементов
+		flex: 1 0 176px;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
+		justify-content: center;		//*Выравнивание дочерних элементов
 		align-items: center;							//*Выравнивание по вертикали
+		flex-direction: column;
 
 		//!НЕ ТРОГАТЬ(АДАПТИВ)
 		@media (max-width:$md2+px){

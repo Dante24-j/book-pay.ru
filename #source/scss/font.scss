@@ -1,5 +1,121 @@
 //<ШРИФТЫ>===============================================================================================
-
+@font-face {
+  font-family: Exo2;
+  src: local(Exo2-Regular),
+          url('https://nomail.com.ua/files/eot/6f552da0472e9cf9d320f0dd4049deef.eot?#iefix') format('embedded-opentype'),
+          url('https://nomail.com.ua/files/woff/6f552da0472e9cf9d320f0dd4049deef.woff') format('woff'),
+          url('https://nomail.com.ua/files/woff2/6f552da0472e9cf9d320f0dd4049deef.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Exo2;
+  src: local(Exo2-Bold),
+          url('https://nomail.com.ua/files/eot/67ab003dfa05d768db7d5c307c80b1e4.eot?#iefix') format('embedded-opentype'),
+          url('https://nomail.com.ua/files/woff/67ab003dfa05d768db7d5c307c80b1e4.woff') format('woff'),
+          url('https://nomail.com.ua/files/woff2/67ab003dfa05d768db7d5c307c80b1e4.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+@mixin Text-Style-3 {
+  font-family: Exo2;
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+@mixin Text-Style-7 {
+  font-family: Exo2;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: left;
+  color: #333333;
+}
+@mixin Text-Style-5 {
+  font-family: Exo2;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+}
+@mixin Text-Style {
+  font-family: Exo2;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+@mixin Text-Style-8 {
+  font-family: Exo2;
+  font-size: 36px;
+  text-align: left;
+  color: #333333;
+}
+@mixin Text-Style-10 {
+  font-family: Exo2;
+  font-size: 36px;
+  text-align: center;
+  color: #333333;
+}
+@mixin Text-Style-13 {
+  font-family: Exo2;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+}
+@mixin Text-Style-6 {
+  font-family: Exo2;
+  font-size: 24px;
+  text-align: left;
+  color: #000000;
+}
+@mixin Text-Style-11 {
+  font-family: Exo2;
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+@mixin Text-Style-2 {
+  font-family: Exo2;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+@mixin Text-Style-9 {
+  font-family: Exo2;
+  font-size: 18px;
+  text-align: left;
+  color: #333333;
+}
+@mixin Text-Style-14 {
+  font-family: Exo2;
+  font-size: 18px;
+  text-align: left;
+  color: #000000;
+}
+@mixin Text-Style-12 {
+  font-family: Exo2;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+}
+@mixin Text-Style-4 {
+  font-family: Exo2;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  color: #141414;
+}
+@mixin Text-Style-15 {
+  font-family: Exo2;
+  font-size: 14px;
+  text-align: left;
+  color: #000000;
+}
 //<Подключаем шрифты>====================================================================================
 
 //</Подключаем шрифты>===================================================================================
