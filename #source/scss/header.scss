@@ -5,11 +5,7 @@
 	top: 0;													//!НЕ ТРОГАТЬ
 	left: 0;												//!НЕ ТРОГАТЬ
 	z-index: 50;										//!НЕ ТРОГАТЬ
-	padding: 28px 0px 0px 0px;							//*добавляет меню отступы сверху и снизу
-
-	@media (max-width:$md2+px){
-		padding: 20px 0px;						//*добавляет меню отступы сверху и снизу на 992,98
-	}
+	@include adaptive-size(28, 16, padding-top);
 
 	//!НЕ ТОРОГАТЬ (ПОДЛОЖКА)
 	&::before{
@@ -20,7 +16,7 @@
 		width: 100%;									//!НЕ ТРОГАТЬ
 		height: 100%;									//!НЕ ТРОГАТЬ
 		z-index: 2;										//!НЕ ТРОГАТЬ
-		background-color: #000;			//*цвет подложки
+		opacity: 0;
 	}
 	// .header__menu
 
@@ -85,7 +81,7 @@
 			background-color: #fb973b;	//*цвет фона меню
 			display: block;									//!НЕ ТРОГАТЬ
 			z-index: 1;											//!НЕ ТРОГАТЬ
-			margin-top: 106px;								//*отступ сверху (должен быть таким же как высота .header)
+			@include adaptive-size(107, 47, margin-top);								//*отступ сверху (должен быть таким же как высота .header)
 			@include anim(0.3s,0s);					//*микроанимация
 
 			//!НЕ ТРОГАТЬ (При нажатии на бургер)
