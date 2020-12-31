@@ -1292,6 +1292,48 @@ h1, h2, h3, h4, h5, h6 {
           transform: translate3d(0px, 5px, 0px);
 }
 
+.page {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ffe600), to(#ffd600));
+  background-image: -o-linear-gradient(bottom, #ffe600, #ffd600);
+  background-image: linear-gradient(to top, #ffe600, #ffd600);
+}
+.page__body {
+  padding: 151px 0;
+}
+
+.body-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.body-page__title {
+  font-family: Exo2;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  margin: 0 45px 0 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 278px;
+          flex: 0 0 278px;
+}
+.body-page__text {
+  font-family: Exo2;
+  font-size: 24px;
+  text-align: left;
+  color: #000000;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 755px;
+          flex: 0 0 755px;
+}
+
 .form-row {
   display: -webkit-box;
   display: -ms-flexbox;
