@@ -14,7 +14,7 @@
 //<ПЕРЕМЕННЫЕ>===========================================================================================
 $minwidth:320px;	//минимальная ширина
 $mw:1366;					//ширина ограничивающего контейнера
-$pp: 30;					//отступ padding с одной стороны
+$pp: 24;					//отступ padding с одной стороны
 $md1:$mw+$pp;			//брейкпоинт 1 (с учетом padding)
 $md2:992.98;			//брейкпоинт 2
 $md3:767.98;			//брейкпоинт 3
@@ -33,7 +33,7 @@ $md4:479.98;			//брейкпоинт 4
 
 //<ОСНОВНАЯ СЕТКА>===================================================================================================
 .container{max-width:$mw+px;margin: 0 auto;width: 100%;
-	
+	padding: 0px $pp+px 0px $pp+px;
 }
 //</ОСНОВНАЯ СЕТКА>==================================================================================================
 
@@ -51,21 +51,62 @@ $md4:479.98;			//брейкпоинт 4
 	// .main__body
 
 	&__body {
+		//@at-root: 150px 0px 120px 0px; //расширение экрана 120 62
+		@include adaptive-size(150, 120, padding-top);
+		@include adaptive-size(120, 62, padding-bottom);
 	}
 
 	// .main__title
 
 	&__title {
+		@include adaptive-size(725, 261, max-width);
+		margin: 0px auto 56px;
+		@include Text-Style-3;
 	}
 
 	// .main__list
 
 	&__list {
+		@include flexbox();
+		justify-content: center;
+		@include adaptive-size(207, 51, margin-bottom);
+
+		@media (max-width:$md3+px){
+			display:block;
+			@include adaptive-size($md3, 261, max-width);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		li{
+			margin: 0px 49px 0px 0px;
+
+			@media (max-width:$md3+px){
+			margin: 0px 0px 11px 0px;
+			}
+		
+			&:last-child{
+				margin-right: 0;
+
+				@media (max-width:$md3+px){
+					margin: 0px 0px 0px 0px;
+					}
+			}
+		}
 	}
 
 	// .main__link
 
 	&__link {
+		@include Text-Style-2;
+
+		&.y{
+			//градиент для текста (текст должен быть в блочном элементе)
+			color: #ffe600;	//для старых браузеров
+			background: linear-gradient(to top, #ffe600, #ffd600);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	}
 
 	// .main__btn
@@ -74,8 +115,23 @@ $md4:479.98;			//брейкпоинт 4
 	}
 
 	// .main__btn-link
-
 	&__btn-link {
+		@include flexbox();
+		justify-content:center;
+		align-items: center;
+		@include Text-Style-4;
+		margin: 0px auto;
+		width: 275px;
+		height: 52px;
+		border-radius: 30px;
+		background-image: linear-gradient(to top, #ffe600, #ffd600);
+		box-shadow: 0 5px #e1b100;
+		@include anim(0.2s,0s);
+
+		&:active{
+			box-shadow: 0 0 #e1b100;
+			@include tr(0px,5px,0px);
+		}
 	}
 }
 .container {

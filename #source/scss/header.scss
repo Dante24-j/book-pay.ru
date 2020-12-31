@@ -44,7 +44,7 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		@include adaptive-size(300, 150, flex-basis);
-		@include adaptive-size(120, 0, margin-right);
+		@include adaptive-size(120, -100, margin-right);
 		z-index: 2;									//!НЕ ТРОГАТЬ
 		img{
 			display: block;
@@ -78,10 +78,11 @@
 			top: -100%;											//!НЕ ТРОГАТЬ(меню спрятано)
 			width: 100%;										//!НЕ ТРОГАТЬ
 			height: 100%;										//!НЕ ТРОГАТЬ
-			background-color: #fb973b;	//*цвет фона меню
+			background-color: #000;	//*цвет фона меню
+			opacity: 0.95;
 			display: block;									//!НЕ ТРОГАТЬ
 			z-index: 1;											//!НЕ ТРОГАТЬ
-			@include adaptive-size(107, 47, margin-top);								//*отступ сверху (должен быть таким же как высота .header)
+			@include adaptive-size(107, 47, padding-top);								//*отступ сверху (должен быть таким же как высота .header)
 			@include anim(0.3s,0s);					//*микроанимация
 
 			//!НЕ ТРОГАТЬ (При нажатии на бургер)

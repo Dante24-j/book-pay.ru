@@ -21,7 +21,7 @@
 }
 @mixin Text-Style-3 {
   font-family: Exo2;
-  font-size: 72px;
+  @include adaptiv-font(72,30,0);
   font-weight: bold;
   text-align: center;
   color: #ffffff;
