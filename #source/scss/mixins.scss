@@ -8,17 +8,24 @@
 @mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:0;}
 @mixin flexorder($val){-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
 //Адаптивный шрифт
-@mixin adaptiv-font($pcSize, $mobSize) {
+@mixin adaptiv-font($pcSize, $mobSize, $zoom) {
   $addSize: $pcSize - $mobSize;
   $addMobSize: $addSize + $addSize * 0.7;
+
   @media (max-width:767px){
     font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$mw}));
   }
+
   @media (min-width:767px){
-    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$mw}));
+      font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$mw}));
+  }
+
+  @if $zoom == 0{
+    @media (min-width:#{$mw + px}){
+      font-size: #{$pcSize + px};
+    }
   }
 }
-
 //адаптивный размер
 @mixin adaptive-size($pcSize, $mobSize, $property) {
   @media (max-width: #{$mw + px}){
