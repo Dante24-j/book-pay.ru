@@ -44,15 +44,18 @@
 
 	&__logo {
 		@include flexbox();
+		justify-content: space-between;
+		flex: 0 0 300px;
 		z-index: 2;									//!НЕ ТРОГАТЬ
 		img{
 			display: block;
 			width: 79px;
 			height: 79px;
-			margin: 0 9px 0 0;
 		}
-		div{
-			width: 211px;
+		span{
+			@include flexbox();
+			justify-content:center;
+			align-items: center;
 			@include Text-Style;
 		}
 	}

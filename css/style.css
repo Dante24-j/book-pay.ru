@@ -870,16 +870,30 @@ h1, h2, h3, h4, h5, h6 {
   display: -ms-flexbox;
   display: flex;
   font-size: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 300px;
+          flex: 0 0 300px;
   z-index: 2;
 }
 .menu__logo img {
   display: block;
   width: 79px;
   height: 79px;
-  margin: 0 9px 0 0;
 }
-.menu__logo div {
-  width: 211px;
+.menu__logo span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: Exo2;
   font-size: 48px;
   font-weight: bold;
