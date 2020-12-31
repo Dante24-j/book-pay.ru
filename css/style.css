@@ -821,7 +821,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   z-index: 50;
-  padding: 28px 0px;
+  padding: 28px 0px 0px 0px;
 }
 @media (max-width: 992.98px) {
   .header {
@@ -873,10 +873,20 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 300px;
-          flex: 0 0 300px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 300px;
+          flex: 1 0 300px;
   z-index: 2;
+}
+@media (max-width: 1366px) {
+  .menu__logo {
+    margin-right: calc(-100px + (120 - -100) * ((100vw - 320px) / (1366 - 320)));
+  }
+}
+@media (min-width: 1366px) {
+  .menu__logo {
+    margin-right: 120px;
+  }
 }
 .menu__logo img {
   display: block;
@@ -899,6 +909,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   text-align: center;
   color: #ffffff;
+}
+@media (max-width: 767px) {
+  .menu__logo span {
+    font-size: calc(24px + 40.8 * ((100vw - 320px) / 1366));
+  }
+}
+@media (min-width: 767px) {
+  .menu__logo span {
+    font-size: calc(24px + 24 * (100vw / 1366));
+  }
 }
 .menu__body {
   display: -webkit-box;
@@ -936,15 +956,16 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   font-size: 0;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+      -ms-flex: 0 1 680px;
+          flex: 0 1 680px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 0px 0px 0px 0px;
+  padding: 14px 0px 0px 0px;
 }
 @media (max-width: 992.98px) {
   .menu__list {
@@ -967,17 +988,20 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.menu__link_tel {
+  margin: 0px 0px 7px 0px;
+}
 .menu__contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   font-size: 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 176px;
-          flex: 1 0 176px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 176px;
+          flex: 0 1 176px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -985,6 +1009,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 14px 0px 0px 0px;
 }
 @media (max-width: 992.98px) {
   .menu__contact {

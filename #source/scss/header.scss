@@ -5,7 +5,7 @@
 	top: 0;													//!НЕ ТРОГАТЬ
 	left: 0;												//!НЕ ТРОГАТЬ
 	z-index: 50;										//!НЕ ТРОГАТЬ
-	padding: 28px 0px;							//*добавляет меню отступы сверху и снизу
+	padding: 28px 0px 0px 0px;							//*добавляет меню отступы сверху и снизу
 
 	@media (max-width:$md2+px){
 		padding: 20px 0px;						//*добавляет меню отступы сверху и снизу на 992,98
@@ -45,7 +45,8 @@
 	&__logo {
 		@include flexbox();
 		justify-content: space-between;
-		flex: 0 0 300px;
+		flex: 1 0 300px;
+		@include adaptive-size(120, -100, margin-right);
 		z-index: 2;									//!НЕ ТРОГАТЬ
 		img{
 			display: block;
@@ -95,10 +96,11 @@
 	// .menu__list	(Основное меню)
 	&__list {
 		@include flexbox(); 							//!НЕ ТРОГАТЬ
-		flex: 0 1 auto;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
+		flex: 0 1 680px;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
 		justify-content: space-between;		//*Выравнивание дочерних элементов
-		align-items: center;							//*Выравнивание по вертикали
+		align-items: flex-start;							//*Выравнивание по вертикали
 		margin: 0px 0px 0px 0px;
+		padding: 14px 0px 0px 0px;
 
 		//!НЕ ТРОГАТЬ(АДАПТИВ)
 		@media (max-width:$md2+px){
@@ -119,16 +121,20 @@
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}
+
+		&_tel{
+			margin: 0px 0px 7px 0px;
+		}
 	}
 
 	// .menu__contact (дополнительное меню)
 	&__contact {
 		@include flexbox();								//!НЕ ТРОГАТЬ
-		flex: 1 0 176px;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
-		justify-content: center;		//*Выравнивание дочерних элементов
+		flex: 0 1 176px;									//*Размер и поведение основного меню(увеличение/уменьшение/размер)
+		justify-content: flex-start;		//*Выравнивание дочерних элементов
 		align-items: center;							//*Выравнивание по вертикали
 		flex-direction: column;
-
+		padding: 14px 0px 0px 0px;
 		//!НЕ ТРОГАТЬ(АДАПТИВ)
 		@media (max-width:$md2+px){
 			display:block;

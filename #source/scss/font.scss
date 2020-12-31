@@ -43,6 +43,7 @@
 @mixin Text-Style {
   font-family: Exo2;
   font-size: 48px;
+  @include adaptiv-font(48, 24, 0);
   font-weight: bold;
   text-align: center;
   color: #ffffff;

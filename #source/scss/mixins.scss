@@ -18,3 +18,14 @@
     font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$mw}));
   }
 }
+
+//адаптивный размер
+@mixin adaptive-size($pcSize, $mobSize, $property) {
+  @media (max-width: #{$mw + px}){
+    #{$property}: calc(#{$mobSize + px} + (#{$pcSize} - #{$mobSize}) * ((100vw - 320px) / (#{$mw} - 320)));
+  }
+
+  @media (min-width: #{$mw + px}){
+    #{$property}: #{$pcSize + px};
+  }
+}
