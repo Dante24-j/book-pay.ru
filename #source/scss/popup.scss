@@ -1,52 +1,59 @@
 //====================================================================================================
 .popup {
-	-webkit-overflow-scrolling: touch;
-	background-color: rgba(0,0,0,0.8);
-	display: none;
+	-webkit-overflow-scrolling: touch; //Свойство  CSS определяет, используют ли сенсорные устройства прокрутку на основе импульса для данного элемента.
+	background-color: #c4c4c496;		//Цвет подложки попапа
+	display: none;										//Удаляет попап из документа
 	position: fixed!important;
 	top: 0px;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+	overflow: auto; //Полосы прокрутки добавляются только при необходимости
 	z-index: 100;
+
 	&.active{
-		.popup-content{@include scale(1);}
+
+		.popup-content{
+			@include scale(1);
+		}
 	}
-	&.show{display: block;
-		.popup-content{@include scale(1);}
+
+	&.show{
+		display: block;
+
+		.popup-content{
+			@include scale(1);
+		}
 	}
 }
-.popup-table{height: 100%;table-layout: fixed;
-	>.cell{height: 100%;vertical-align: middle;padding: 30px 10px;}
+.popup-table{
+	height: 100%;				//!высота на весь экран
+	table-layout: fixed;//Определяет, как браузер должен вычислять ширину ячеек таблицы, основываясь на ее содержимом. Ширина колонок в этом случае определяется либо с помощью тега <col>, либо вычисляется на основе первой строки. Если данные о форматировании первой строки таблицы по каким-либо причинам получить невозможно, в этом случае таблица делится на колонки равной ширины. При использовании этого значения, содержимое, которое не помещается в ячейку указанной ширины, будет «обрезано» либо наложено поверх ячейки. Это зависит от используемого браузера, но в любом случае ширина ячейки меняться не будет. Для корректной работы этого значения обязательно должна быть задана ширина таблицы.
+
+	>.cell{
+		height: 100%;
+		vertical-align: middle;
+		padding: 30px 10px;
+	}
 }
 .popup-content {
 	@include scale(0);
 	@include anim(0.3s, 0s);
 	position: relative;
-	max-width: 500px;
+	@include adaptive-size(435, 299, max-width);
 	margin: 0px auto;
 	background-color: #fff;
+	@include adaptive-size(19, 62, padding-top);
+	@include adaptive-size(53, 24, padding-bottom);
 }
 .popup-close {
-	width: 15px;
-	height: 15px;
+	width: 26px;
+	height: 26px;
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: 18px;
+	right: 22px;
 	cursor: pointer;
-	background: url('../img/icons/close.png') 0 0 no-repeat;
-}
-.popup-video{
-	.popup-close{width: 40px;height: 40px;background-color: #000;top: 0;right: 0;}
-}
-.popup-video__value{max-width: 99%;height: 99%;border: none;
-	iframe{position: fixed;top: 50%;left: 50%;width: 100%;min-height: 100%;height: auto;transform: translateX(-50%) translateY(-50%);background-size: cover;}
-}
-
-.popup__txt{
-	font-size: 20px;
-	padding: 50px;
+	background: url('../img/close.svg') 0 0 no-repeat;
 }
 
 //====================================================================================================
