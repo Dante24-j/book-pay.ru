@@ -45,6 +45,13 @@
 	background-color: #fff;
 	@include adaptive-size(19, 62, padding-top);
 	@include adaptive-size(53, 24, padding-bottom);
+
+	&.contact{
+		@include adaptive-size(96, 96, padding-top);
+		@include adaptive-size(53, 53, padding-bottom);
+		@include adaptive-size(80, 12, padding-left);
+		@include adaptive-size(80, 12, padding-right);
+	}
 }
 .popup-close {
 	width: 26px;
@@ -54,8 +61,38 @@
 	right: 22px;
 	cursor: pointer;
 	background: url('../img/close.svg') 0 0 no-repeat;
+
+	&.contact{
+		@media (max-width:$md4+px){
+			display:none;
+		}
+	}
 }
 
 //====================================================================================================
+.popup-email, .popup-phone,.popup-title {
+	font-family: Exo 2;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 17px;
+	align-items: left;
+}
+
+.popup-title {
+	font-size: 24px;
+	margin: 0px 0px 68px 0px;
+}
+.popup-email{
+margin: 0px 0px 15px 0px;
+}
+
+.popup-phone {
+	margin: 0px 0px 83px 0px;
+}
+
+.popup-link{
+	@extend .main__btn-link;
+}
 //====================================================================================================
 

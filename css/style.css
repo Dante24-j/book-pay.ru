@@ -803,6 +803,46 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 53px;
   }
 }
+@media (max-width: 1366px) {
+  .popup-content.contact {
+    padding-top: calc(96px + (96 - 96) * ((100vw - 320px) / (1366 - 320)));
+  }
+}
+@media (min-width: 1366px) {
+  .popup-content.contact {
+    padding-top: 96px;
+  }
+}
+@media (max-width: 1366px) {
+  .popup-content.contact {
+    padding-bottom: calc(53px + (53 - 53) * ((100vw - 320px) / (1366 - 320)));
+  }
+}
+@media (min-width: 1366px) {
+  .popup-content.contact {
+    padding-bottom: 53px;
+  }
+}
+@media (max-width: 1366px) {
+  .popup-content.contact {
+    padding-left: calc(12px + (80 - 12) * ((100vw - 320px) / (1366 - 320)));
+  }
+}
+@media (min-width: 1366px) {
+  .popup-content.contact {
+    padding-left: 80px;
+  }
+}
+@media (max-width: 1366px) {
+  .popup-content.contact {
+    padding-right: calc(12px + (80 - 12) * ((100vw - 320px) / (1366 - 320)));
+  }
+}
+@media (min-width: 1366px) {
+  .popup-content.contact {
+    padding-right: 80px;
+  }
+}
 
 .popup-close {
   width: 26px;
@@ -812,6 +852,35 @@ h1, h2, h3, h4, h5, h6 {
   right: 22px;
   cursor: pointer;
   background: url("../img/close.svg") 0 0 no-repeat;
+}
+@media (max-width: 479.98px) {
+  .popup-close.contact {
+    display: none;
+  }
+}
+
+.popup-email, .popup-phone, .popup-title {
+  font-family: Exo 2;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.popup-title {
+  font-size: 24px;
+  margin: 0px 0px 68px 0px;
+}
+
+.popup-email {
+  margin: 0px 0px 15px 0px;
+}
+
+.popup-phone {
+  margin: 0px 0px 83px 0px;
 }
 
 .header {
@@ -1254,7 +1323,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.main__btn-link, .btn {
+.main__btn-link, .btn, .popup-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1283,7 +1352,7 @@ h1, h2, h3, h4, h5, h6 {
   -o-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
 }
-.main__btn-link:active, .btn:active {
+.main__btn-link:active, .btn:active, .popup-link:active {
   -webkit-box-shadow: 0 0 #e1b100;
           box-shadow: 0 0 #e1b100;
   -webkit-transform: translate3d(0px, 5px, 0px);
