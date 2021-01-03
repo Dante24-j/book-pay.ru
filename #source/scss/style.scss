@@ -100,7 +100,7 @@ $md4:479.98;			//брейкпоинт 4
 	&__link {
 		@include Text-Style-2;
 
-		&.y{
+		&:hover{
 			//градиент для текста (текст должен быть в блочном элементе)
 			color: #ffe600;	//для старых браузеров
 			background: linear-gradient(to top, #ffe600, #ffd600);
@@ -140,7 +140,13 @@ $md4:479.98;			//брейкпоинт 4
 
 	// .page__body
 	&__body {
-		padding: 151px 0;
+		@include adaptive-size(151, 107, padding-top);
+		@include adaptive-size(151, 107, padding-bottom);
+
+		@media (max-width:$md2+px){
+			padding-left: 14px;
+			padding-right: 14px;
+		}
 	}
 }
 
@@ -149,19 +155,27 @@ $md4:479.98;			//брейкпоинт 4
 	justify-content:center;
 	align-items: center;
 
+	@media (max-width:$md2+px){
+		display: block;
+	}
+
 	// .body-page__title
 
 	&__title {
 		@include Text-Style-5;
 		margin: 0 45px 0 0;
 		flex: 0 0 278px;
+
+		@media (max-width:$md2+px){
+			margin: 0px 0px 16px 0px;
+		}
 	}
 
 	// .body-page__text
 
 	&__text {
 		@include Text-Style-6;
-		flex: 0 0 755px;
+		flex: 0 1 755px;
 	}
 }
 

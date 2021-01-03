@@ -112,8 +112,10 @@
 
 	&__link {
 		@include Text-Style-2;
+		@include anim(0.3s,0s);
 
-		&.active, &.y{
+		&:hover, &.y{
+			@include anim(0.3s,0s);
 			//градиент для текста (текст должен быть в блочном элементе)
 			color: #ffe600;	//для старых браузеров
 			background: linear-gradient(to top, #ffe600, #ffd600);

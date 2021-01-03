@@ -26,6 +26,7 @@
     }
   }
 }
+
 //адаптивный размер
 @mixin adaptive-size($pcSize, $mobSize, $property) {
   @media (max-width: #{$mw + px}){
